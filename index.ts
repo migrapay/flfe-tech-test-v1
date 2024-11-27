@@ -27,7 +27,6 @@ app.post("/notes", async (req: Request, res: Response) => {
 
   try {
     const note = new Note({ title, content });
-    await note.save();
     res.json(note);
   } catch (error) {
     res.status(500).send(error);
